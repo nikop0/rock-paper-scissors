@@ -78,14 +78,13 @@ main {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    display: none;
 }
 
 .left {
-    width: 50%;
 }
 
 .right {
-    width: 50%;
 }
 
 .winner-wrapper {
