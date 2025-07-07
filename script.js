@@ -13,12 +13,24 @@ moves.forEach( move => {
     chosenMove = e.target.closest('.single-item');
     chooseItem.style.display = 'none';
     mainGame.style.display = 'flex';
-    console.log('');
     mainGame.querySelector('.left').appendChild(chosenMove);
-    mainGame.querySelector('.right').appendChild(opponentMove());
+    let opMove = opponentMove()
+    mainGame.querySelector('.right').appendChild(opMove);
+    if(winner(chosenMove, opMove)) {
+        console.log('you won');
+    } else {
+        console.log('you lost');
+    }
 })});
 
 const opponentMove = () => {
     let opMove = Math.floor(Math.random() * 3);
     return moves[opMove];
+}
+
+const winner = (p1, p2) => {
+    if((p1.id == 'rock' && p2.id == 'scissors') || (p1.id == 'paper' && p2.id == 'rock') || (p1.id == 'scissors' && p2.id == 'paper')) {
+        return true;
+    }
+    return false;
 }
