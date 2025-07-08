@@ -2,6 +2,8 @@ let playBtn = document.querySelector('#play-btn');
 let chooseItem = document.querySelector('.choose-item');
 let moves = document.querySelectorAll('.single-item');
 let mainGame = document.querySelector('.main-game');
+let youWon = document.querySelector('#you-won');
+let youLost = document.querySelector('#you-lost');
 let chosenMove = null;
 playBtn.addEventListener('click', e => {
     playBtn.style.display = 'none';
@@ -17,9 +19,9 @@ moves.forEach( move => {
     let opMove = opponentMove()
     mainGame.querySelector('.right').appendChild(opMove);
     if(winner(chosenMove, opMove)) {
-        console.log('you won');
+        youWon.style.display = 'block';
     } else {
-        console.log('you lost');
+        youLost.style.display = 'block';
     }
 })});
 

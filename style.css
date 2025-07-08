@@ -87,6 +87,16 @@ main {
 .right {
 }
 
-.winner-wrapper {
+.winner-modal {
     position: absolute;
+    left: 50%;
+}
+
+#you-won {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.473);
+}
+#you-lost {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.473);
 }
