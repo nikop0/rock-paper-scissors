@@ -100,3 +100,9 @@ main {
     display: none;
     background-color: rgba(0, 0, 0, 0.473);
 }
+
+#play-again-btn {
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+}

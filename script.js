@@ -6,12 +6,22 @@ let youWon = document.querySelector('#you-won');
 let youLost = document.querySelector('#you-lost');
 let myScore = document.querySelector('#my-score');
 let opScore = document.querySelector('#bot-score');
+let playAgainBtn = document.querySelector('#play-again-btn');
 let chosenMove = null;
 let myScoreNumber = parseInt(myScore.innerText);
 let opScoreNumber = parseInt(opScore.innerText);
+
 playBtn.addEventListener('click', e => {
     playBtn.style.display = 'none';
     chooseItem.style.display = 'block';
+});
+
+playAgainBtn.addEventListener('click', e => {
+    chooseItem.style.display = 'block';
+    mainGame.style.display = 'none';
+    mainGame.querySelectorAll('.single-item').forEach(item => {
+        item.style.display = 'none';
+    })
 });
 
 moves.forEach( move => {
