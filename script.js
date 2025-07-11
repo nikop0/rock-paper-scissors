@@ -17,22 +17,24 @@ playBtn.addEventListener('click', e => {
 });
 
 playAgainBtn.addEventListener('click', e => {
-    chooseItem.style.display = 'block';
-    mainGame.style.display = 'none';
-    mainGame.querySelectorAll('.single-item').forEach(item => {
-        item.style.display = 'none';
-    })
+    playAgain();
 });
 
-moves.forEach( move => {
-    move.addEventListener('click', e => {
-    chosenMove = e.target.closest('.single-item');
+const playAgain = () => {
+    mainGame.querySelectorAll('.single-item').forEach(item => {
+        item.remove();
+    });
+    chooseItem.style.display = 'block';
+    mainGame.style.display = 'none';
+}
+
+const chooseMove = (el) => {
     chooseItem.style.display = 'none';
     mainGame.style.display = 'flex';
-    mainGame.querySelector('.left').appendChild(chosenMove);
+    mainGame.querySelector('.left').appendChild(el.cloneNode(true));
     let opMove = opponentMove()
-    mainGame.querySelector('.right').appendChild(opMove);
-    if(winner(chosenMove, opMove)) {
+    mainGame.querySelector('.right').appendChild(opMove.cloneNode(true));
+    if(winner(el, opMove)) {
         youWon.style.display = 'block';
         myScoreNumber++;
         updateScore(myScoreNumber, opScoreNumber);
@@ -41,7 +43,7 @@ moves.forEach( move => {
         opScoreNumber++;
         updateScore(myScoreNumber, opScoreNumber);
     }
-})});
+}
 
 const opponentMove = () => {
     let opMove = Math.floor(Math.random() * 3);
