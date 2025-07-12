@@ -26,6 +26,8 @@ const playAgain = () => {
     });
     chooseItem.style.display = 'block';
     mainGame.style.display = 'none';
+    youWon.style.display = 'none';
+    youLost.style.display = 'none';
 }
 
 const chooseMove = (el) => {

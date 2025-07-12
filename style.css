@@ -89,16 +89,22 @@ main {
 
 .winner-modal {
     position: absolute;
-    left: 50%;
 }
 
 #you-won {
     display: none;
-    background-color: rgba(0, 0, 0, 0.473);
+    background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: inset;
+    font-size: 18px;
+    color: white;
+    padding: 20px;
 }
 #you-lost {
     display: none;
     background-color: rgba(0, 0, 0, 0.473);
+    font-size: 18px;
+    color: white;
+    padding: 20px;
 }
 
 #play-again-btn {
